@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <style media="screen">
+  .singleBlog{
+
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+  }
+  .blog{
+    padding: 2% 2% 2% 2%;
+    border: 1px solid black;
+    border-radius: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+  hr{
+    height: 2px !important;
+    border: solid 1px dimgrey !important;
+  }
+  </style>
+  <script type="text/javascript">
+
+  </script>
+  <body>
+    {% for blog in blogs %}
+    <div class="singleBlog">
+      <div class="row">
+        <div class="col-md-10"><h2>{{blog.title}}</h2></div>
+        <div class="col-md-2" style="padding-top:4%; float:right;"><h4>{{blog.created}}</h4></div>
+      </div>
+      <hr width="90%" style="height: 40px;">
+      <div class="blog">{{blog.blog}}</div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
+{% endblock %}
